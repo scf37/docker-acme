@@ -2,13 +2,13 @@
 
 This image is ACME client to manage SSL keys for single web site in dockerized environment.
 
-##Features
+## Features
 - generates SSL certificate for specific domain(s) and puts it to web server directory
 - automatically refreshes SSL certificate every two months (letsencrypt certificates expire after 3 months)
 - automatically restarts web server when certificates change
 - writes logs to file
 
-##Configuration parameters
+## Configuration parameters
 Configuration parameters must be passed to container via environment variables
 - DOMAINS space-separated domain names for this cert. example: 'host.me www.host.me'
 - WEBROOT root directory of web server. example: '/data'
