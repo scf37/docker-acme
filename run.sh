@@ -56,6 +56,7 @@ echo "  SERVER_CONTAINER=$SERVER_CONTAINER" >> data/log.log
 
 while true ; do
     sum=$([ -e "$KEYPATH" ] && cat $KEYPATH | sha1sum)$([ -e "$CERTPATH" ] && cat $CERTPATH | sha1sum)
+    /root/.acme.sh/acme.sh --register-account -m scf370@gmail.com
     /root/.acme.sh/acme.sh --issue $ACME_ISSUE_DOMAINS  -w $WEBROOT 2>&1 >> /data/log.log
     /root/.acme.sh/acme.sh --installcert -d $PRIMARY_DOMAIN --keypath $KEYPATH --fullchainpath $CERTPATH 2>&1 >> /data/log.log
 
